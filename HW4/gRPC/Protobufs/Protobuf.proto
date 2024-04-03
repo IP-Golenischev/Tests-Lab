@@ -1,0 +1,79 @@
+syntax = "proto3";
+
+import "google/protobuf/timestamp.proto";
+
+option csharp_namespace = "HW4";
+
+enum ProductType{
+    PRODUCT_TYPE_UNSPECIFIED = 0;
+    PRODUCT_TYPE_GENERAL = 1;
+    PRODUCT_TYPE_HOUSEHOLD_CHEMICALS = 2;
+    PRODUCT_TYPE_TECHNIC = 3;
+    PRODUCT_TYPE_PRODUCTS = 4;
+}
+
+enum FilterBy{
+    FILTER_BY_UNDEFINED = 0;
+    FILTER_BY_CREATED_DATE = 1;
+    FILTER_BY_PRODUCT_TYPE = 2;
+    FILTER_BY_STOCK = 3;
+}
+
+service ProductService {
+    rpc GetProduct (ProductNumberRequest) returns (ProductInfoResponse) {}
+    rpc GetProducts (GetProductsRequest) returns (ProductsResponse) {}
+    rpc CreateProduct (CreateProductInfo) returns (ProductNumberResponse) {}
+    rpc UpdateProduct (UpdatePrice) returns (EmptyResponse) {}
+}
+
+message ProductInfo {
+    int32 product_number = 1;
+    string product_name = 2;
+    ProductType product_type = 3;
+    int32 product_weight = 4;
+    int32 price = 5;
+    google.protobuf.Timestamp created_at = 6;
+    int32 stock_number = 7;
+}
+
+message CreateProductInfo {
+    string product_name = 1;
+    ProductType product_type = 2;
+    int32 product_weight = 3;
+    int32 price = 4;
+    int32 stock_number = 5;
+}
+
+message UpdatePrice {
+    int32 product_number = 1;
+    int32 price = 2;
+}
+
+message ProductNumberResponse {
+    int32 product_number = 1;
+}
+
+message ProductNumberRequest {
+    int32 product_number = 1;
+}
+
+message GetProductsRequest {
+    int32 skip = 1;
+    int32 take = 2;
+    FilterBy filter_by = 3;
+    int32 stock_number = 4;
+    ProductType product_type = 5;
+    google.protobuf.Timestamp date_from = 6;
+    google.protobuf.Timestamp date_to = 7;
+}
+
+message ProductInfoResponse {
+    ProductInfo product_info = 1;
+}
+
+message ProductsResponse {
+    int32 item_count = 1;
+    repeated ProductInfo products = 2;
+}
+
+message EmptyResponse {}
