@@ -1,31 +1,14 @@
 using AutoFixture.Xunit2;
 using AutoMapper;
-using HW4;
 using HW4.DataAccess;
 using HW4.DataAccess.Abstractions;
 using Hw4.DataAccess.Entities;
 using HW4.DataAccess.Services;
-using HW4.Services.Base;
-using HW4.Services.DataTransferObjects;
-using HW4.Services.Exceptions;
 using Microsoft.Extensions.Caching.Memory;
 using Moq;
 
 namespace HW4UnitTests
 {
-	public class ProductServiceTestHelper
-	{
-		public static void AssertProduct(Product expectedProduct, Product actualProduct)
-		{
-			Assert.Equal(expectedProduct.ProductNumber, actualProduct.ProductNumber);
-			Assert.Equal(expectedProduct.ProductName, actualProduct.ProductName);
-			Assert.Equal(expectedProduct.ProductType, actualProduct.ProductType);
-			Assert.Equal(expectedProduct.CreatedAt, actualProduct.CreatedAt);
-			Assert.Equal(expectedProduct.ProductWeight, actualProduct.ProductWeight);
-			Assert.Equal(expectedProduct.Price, actualProduct.Price);
-			Assert.Equal(expectedProduct.StockNumber, actualProduct.StockNumber);
-		}
-	}
 
 	public class ProductServiceTests
 	{
