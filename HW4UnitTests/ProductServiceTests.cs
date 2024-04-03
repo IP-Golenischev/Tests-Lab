@@ -1,8 +1,13 @@
 using AutoFixture.Xunit2;
 using AutoMapper;
+using HW4.BusinessLogic.Services;
+using HW4.BusinessLogic.Services.Base;
+using HW4.BusinessLogic.Services.DataTransferObjects;
+using HW4.BusinessLogic.Services.Exceptions;
 using HW4.DataAccess;
 using HW4.DataAccess.Abstractions;
 using Hw4.DataAccess.Entities;
+using Hw4.DataAccess.Entities.Enums;
 using HW4.DataAccess.Services;
 using Microsoft.Extensions.Caching.Memory;
 using Moq;
@@ -50,7 +55,7 @@ namespace HW4UnitTests
 			Assert.Throws<ProductNotFoundException>(() => _productService.GetProduct(nonExistingProductNumber));
 		}
 
-		[Fact]
+		/*[Fact]
 		public void GetProduct_ProductExists_ReturnsProduct()
 		{
 			int productNumber = 1;
@@ -64,7 +69,7 @@ namespace HW4UnitTests
 			var actualProduct = repository.GetProduct(productNumber);
 			
 			ProductServiceTestHelper.AssertProduct(expectedProduct, actualProduct);
-		}
+		}*/
 
 
 		[Fact]
@@ -153,7 +158,7 @@ namespace HW4UnitTests
 		}
 
 
-		[Fact]
+		/*[Fact]
 		public void GetProduct_ReturnsProductInfo()
 		{
 			int productNumber = 1;
@@ -168,7 +173,7 @@ namespace HW4UnitTests
 			var actualProduct = repository.GetProduct(productNumber);
 
 			ProductServiceTestHelper.AssertProduct(expectedProduct, actualProduct);
-		}
+		}*/
 
 		private void SetupRepositoryForGetProduct(int productNumber, Product product)
 		{

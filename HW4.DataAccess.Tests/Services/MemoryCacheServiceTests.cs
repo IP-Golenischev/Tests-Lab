@@ -35,7 +35,21 @@ public class MemoryCacheServiceTests
             q = null;
             return false;
         });
-        _cachingMock.Setup(cache => cache.CreateEntry(It.IsAny<object>())).Returns(Mock.Of<ICacheEntry>());
+        _cachingMock.Setup(cache => cache.CreateEntry(It.IsAny<object>())).Returns(Mock.Of<ICacheEntry>()).Verifiable();
+        var result = _memoryCacheService.GetOrCreate(key, value);
+        result.Should().BeEquivalentTo(value);
+    }
+    [Theory]
+    [MemberData(nameof(TestData))]
+    public void ObjectShouldBeCreatedWhenPresent(string key, object value)
+    {
+        object? res= value;
+        _cachingMock.Setup(cache => cache.TryGetValue(key,out res)).Returns((string p, ref object? q) =>
+        {
+            q = value;
+            return true;
+        });
+        _cachingMock.Verify(cache => cache.CreateEntry(It.IsAny<object>()), Times.Never);
         var result = _memoryCacheService.GetOrCreate(key, value);
         result.Should().BeEquivalentTo(value);
     }

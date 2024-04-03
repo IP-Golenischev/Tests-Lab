@@ -3,7 +3,6 @@ using HW4.DataAccess.Abstractions;
 using Hw4.DataAccess.Contracts;
 using Hw4.DataAccess.Contracts.Enums;
 using Hw4.DataAccess.Entities;
-using Hw4.DataAccess.Entities.Enums;
 
 namespace HW4.DataAccess;
 
@@ -48,7 +47,6 @@ public class ProductRepository(IMemoryCacheService cacheService) : IProductRepos
 		lock (_writeLock)
 		{
 			var products = cacheService.GetOrCreate(ProductCacheKey, new HashSet<Product>());
-
 			products.Remove(newProduct);
 			products.Add(newProduct);
 		}
