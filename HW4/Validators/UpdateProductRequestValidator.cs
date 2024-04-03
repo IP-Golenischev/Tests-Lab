@@ -1,5 +1,5 @@
 ﻿using FluentValidation;
-using HW4.DataTransferObject;
+using HW4.BusinessLogic.Services.DataTransferObjects;
 
 namespace HW4.Validators
 {

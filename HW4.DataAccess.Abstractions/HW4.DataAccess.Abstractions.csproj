@@ -1,0 +1,14 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+    <PropertyGroup>
+        <TargetFramework>net8.0</TargetFramework>
+        <ImplicitUsings>enable</ImplicitUsings>
+        <Nullable>enable</Nullable>
+    </PropertyGroup>
+
+    <ItemGroup>
+      <ProjectReference Include="..\Hw4.DataAccess.Contracts\Hw4.DataAccess.Contracts.csproj" />
+      <ProjectReference Include="..\Hw4.DataAccess.Entities\Hw4.DataAccess.Entities.csproj" />
+    </ItemGroup>
+
+</Project>

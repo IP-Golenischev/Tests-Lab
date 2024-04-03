@@ -1,17 +1,15 @@
+using AutoFixture.Xunit2;
 using AutoMapper;
 using HW4;
-using HW4.DataTransferObject;
-using HW4.Exceptions;
-using HW4.Interfaces;
-using HW4.Models;
-using HW4.Repositories;
-using HW4.Services;
-using Moq;
-using ProductInfo = HW4.DataTransferObject.ProductInfo;
-using ProductService = HW4.Services.ProductService;
+using HW4.DataAccess;
+using HW4.DataAccess.Abstractions;
+using Hw4.DataAccess.Entities;
+using HW4.DataAccess.Services;
+using HW4.Services.Base;
+using HW4.Services.DataTransferObjects;
+using HW4.Services.Exceptions;
 using Microsoft.Extensions.Caching.Memory;
-using static Google.Rpc.Context.AttributeContext.Types;
-using AutoFixture.Xunit2;
+using Moq;
 
 namespace HW4UnitTests
 {

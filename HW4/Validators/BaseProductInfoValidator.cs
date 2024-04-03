@@ -1,5 +1,4 @@
 ﻿using FluentValidation;
-using HW4.DataTransferObject;
 
 namespace HW4.Validators;
 

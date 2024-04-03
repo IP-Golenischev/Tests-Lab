@@ -4,12 +4,8 @@ using HW4.Exceptions;
 
 namespace HW4.Interceptors
 {
-	public class ErrorInterceptor : Interceptor
+	public class ErrorInterceptor(ILogger<LogInterceptor> logger) : Interceptor
 	{
-		private readonly ILogger<LogInterceptor> _logger;
-
-		public ErrorInterceptor(ILogger<LogInterceptor> logger) => _logger = logger;
-
 		public override async Task<TResponse> UnaryServerHandler<TRequest, TResponse>(TRequest request,
 			ServerCallContext context, UnaryServerMethod<TRequest, TResponse> continuation)
 		{
@@ -35,7 +31,7 @@ namespace HW4.Interceptors
 			}
 			catch (Exception e)
 			{
-				_logger.LogCritical(e, "When executing method {Method} an error occured: {Message}",
+				logger.LogCritical(e, "When executing method {Method} an error occured: {Message}",
 					context.Method, e.Message);
 				throw new RpcException(new Status(StatusCode.Internal, ""));
 			}

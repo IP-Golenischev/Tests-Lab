@@ -1,13 +1,13 @@
-using System.Reflection;
 using System.Text.Json.Serialization;
 using FluentValidation;
 using FluentValidation.AspNetCore;
+using HW4.DataAccess;
+using HW4.DataAccess.Abstractions;
+using HW4.DataAccess.Services;
 using Microsoft.OpenApi.Models;
 using HW4.Interceptors;
-using HW4.Interfaces;
-using HW4.Mappers;
-using HW4.Repositories;
-using HW4.Services;
+using HW4.BusinessLogic.Services;
+using HW4.BusinessLogic.Services.Base;
 
 
 var builder = WebApplication.CreateBuilder(args);
@@ -31,9 +31,9 @@ builder.Services.AddSwaggerGen(c =>
 		Version = "v1"
 	});
 });
-
 builder.Services.AddGrpcReflection();
 builder.Services.AddFluentValidationAutoValidation();
+builder.Services.AddAutoMapper(typeof(IProductService));
 builder.Services.AddAutoMapper(typeof(Program));
 builder.Services.AddValidatorsFromAssemblyContaining<Program>();
 builder.Services.AddScoped<IProductService, ProductService>();
