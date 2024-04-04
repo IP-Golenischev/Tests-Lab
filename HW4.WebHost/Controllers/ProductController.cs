@@ -1,8 +1,10 @@
-﻿using HW4.BusinessLogic.Services.Base;
+﻿using Hw4.BusinessLogic.Models;
+using HW4.BusinessLogic.Services.Base;
 using HW4.BusinessLogic.Services.DataTransferObjects;
+using Hw4.DataAccess.Entities;
 using Microsoft.AspNetCore.Mvc;
 
-namespace HW4.Controllers;
+namespace HW4.WebHost.Controllers;
 
 [ApiController]
 [Route("api/[controller]")]

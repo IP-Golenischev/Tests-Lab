@@ -19,7 +19,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\HW4\HW4.csproj" />
+    <ProjectReference Include="..\HW4.WebHost\HW4.WebHost.csproj" />
   </ItemGroup>
 
   <ItemGroup>

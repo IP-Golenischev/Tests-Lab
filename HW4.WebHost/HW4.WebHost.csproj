@@ -27,5 +27,9 @@
   <ItemGroup>
     <Compile Remove="Validators\BaseProductInfoValidator.cs" />
   </ItemGroup>
+  <ItemGroup>
+    <InternalsVisibleTo Include="HW4.WebHost.UnitTests" />
+    <InternalsVisibleTo Include="HW4.IntegrationTests" />
+  </ItemGroup>
 
 </Project>

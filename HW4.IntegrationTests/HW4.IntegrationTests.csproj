@@ -26,8 +26,8 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\HW4UnitTests\HW4UnitTests.csproj" />
-    <ProjectReference Include="..\HW4\HW4.csproj" />
+    <ProjectReference Include="..\HW4.WebHost.UnitTests\HW4.WebHost.UnitTests.csproj" />
+    <ProjectReference Include="..\HW4.WebHost\HW4.WebHost.csproj" />
   </ItemGroup>
 
   <ItemGroup>

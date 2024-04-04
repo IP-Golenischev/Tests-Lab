@@ -1,8 +1,8 @@
 ﻿using Grpc.Core;
 using Grpc.Core.Interceptors;
-using HW4.Exceptions;
+using HW4.WebHost.Exceptions;
 
-namespace HW4.Interceptors
+namespace HW4.WebHost.Interceptors
 {
 	public class ErrorInterceptor(ILogger<LogInterceptor> logger) : Interceptor
 	{

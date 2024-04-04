@@ -1,13 +1,14 @@
 using System.Text.Json.Serialization;
 using FluentValidation;
 using FluentValidation.AspNetCore;
+using HW4.BusinessLogic.Services;
+using HW4.BusinessLogic.Services.Base;
 using HW4.DataAccess;
 using HW4.DataAccess.Abstractions;
 using HW4.DataAccess.Services;
 using Microsoft.OpenApi.Models;
-using HW4.Interceptors;
-using HW4.BusinessLogic.Services;
-using HW4.BusinessLogic.Services.Base;
+using HW4.WebHost.Interceptors;
+
 
 
 var builder = WebApplication.CreateBuilder(args);

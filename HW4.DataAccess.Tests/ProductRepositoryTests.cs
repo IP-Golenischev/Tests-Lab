@@ -26,9 +26,9 @@ public class ProductRepositoryTests
     [Fact]
     void GetProductWhenCacheIsEmpty()
     {
-        var prodocts = new HashSet<Product>();
+        var products = new HashSet<Product>();
         _memoryCacheServiceMock.Setup(service => service.GetOrCreate(It.IsAny<string>(), It.IsAny<object>()))
-            .Returns(prodocts);
+            .Returns(products);
         var result = _productRepository.GetProduct(12345);
         result.Should().BeNull();
     }

@@ -3,11 +3,11 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.9.34714.143
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "HW4", "HW4\HW4.csproj", "{FD894095-E627-493B-AC17-B6ACC4E2489E}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "HW4.WebHost", "HW4.WebHost\HW4.WebHost.csproj", "{FD894095-E627-493B-AC17-B6ACC4E2489E}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "HW4UnitTests", "HW4UnitTests\HW4UnitTests.csproj", "{2E1822B3-E4CD-40E2-AC13-E2A54CE5FBF2}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "HW4.WebHost.UnitTests", "HW4.WebHost.UnitTests\HW4.WebHost.UnitTests.csproj", "{2E1822B3-E4CD-40E2-AC13-E2A54CE5FBF2}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "HW4UnitTestsIntegration", "HW4UnitTestsIntegration\HW4UnitTestsIntegration.csproj", "{9A1090E7-A054-4F27-AE07-8AD7948582EF}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "HW4.IntegrationTests", "HW4.IntegrationTests\HW4.IntegrationTests.csproj", "{9A1090E7-A054-4F27-AE07-8AD7948582EF}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "BusinessLogic", "BusinessLogic", "{5618276C-A0C5-412F-A946-75EB764A70B6}"
 EndProject

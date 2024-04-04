@@ -1,7 +1,8 @@
 ﻿using FluentValidation;
 using HW4.BusinessLogic.Services.DataTransferObjects;
 
-namespace HW4.Validators;
+
+namespace HW4.WebHost.Validators;
 
 public class GetProductsByFilterRequestValidator : AbstractValidator<GetProductsByFilterRequest>
 {

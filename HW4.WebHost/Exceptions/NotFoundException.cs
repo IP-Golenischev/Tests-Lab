@@ -1,4 +1,4 @@
-﻿namespace HW4.Exceptions;
+﻿namespace HW4.WebHost.Exceptions;
 
 public class NotFoundException : Exception
 {

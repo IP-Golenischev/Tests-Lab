@@ -12,7 +12,7 @@ using HW4.DataAccess.Services;
 using Microsoft.Extensions.Caching.Memory;
 using Moq;
 
-namespace HW4UnitTests
+namespace HW4.WebHost.UnitTests
 {
 
 	public class ProductServiceTests

@@ -1,7 +1,7 @@
 ﻿using Grpc.Core;
 using Grpc.Core.Interceptors;
 
-namespace HW4.Interceptors
+namespace HW4.WebHost.Interceptors
 {
 	public class LogInterceptor(ILogger<LogInterceptor> logger) : Interceptor
 	{
